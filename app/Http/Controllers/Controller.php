@@ -37,8 +37,9 @@ class Controller extends BaseController
     }
     function floor_add(Request $request){
         var_dump($request->input());//die();   
+    for($j=1;$j<=15;$j++){
         $floor=new Floor;
-        $floor->floor= $request->floor;    
+        $floor->floor= $j;    
 
         if($floor->save())
         {
@@ -59,6 +60,7 @@ class Controller extends BaseController
                 $ff->flat_id=$flat_id;
                 $ff->save();
             }
+        }
         }
     return redirect('floor_new');
     }
