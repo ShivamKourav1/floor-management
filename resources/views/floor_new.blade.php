@@ -15,18 +15,18 @@
 
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Add New floor or block</h5>
+          <h5 class="card-title">Generate floors and Flats</h5>
 
           <!-- Vertical Form -->
           <form action="{{url('floor_add')}}" class="row g-3" method='post'>@csrf 
-            <div class="col-12">
+            <!--div class="col-12">
               <label for="inputNanme4" class="form-label">Floor Name</label>
               <input type="text" name="floor" class="form-control" id="inputNanme4">
-            </div>
+            </div-->
 
             <div class="text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-              <button type="reset" class="btn btn-secondary">Reset</button>
+              <button type="submit" class="btn btn-primary">Generate Floors and Flats</button>
+              
             </div>
           </form><!-- Vertical Form -->
 
