@@ -42,16 +42,20 @@ class Controller extends BaseController
 
         if($floor->save())
         {
-         $floor_id=Floor::orderBy('floor_id', 'DESC')->first()->floor_id;  
+         $floor=Floor::orderBy('floor_id', 'DESC')->first(); 
+         echo '<pre>';
+
             for($i=1;$i<=5;$i++)
             {
                 
                 $flat=new Flat;
-                $flat->flat=$floor_id*100+$i;
+                $flat->flat=$floor->floor*100+$i;
+
                 $flat->save();
                 $flat_id=Flat::orderBy('flat_id', 'DESC')->first()->flat_id; 
+                
                 $ff=new Floor_Flat;
-                $ff->floor_id=$floor_id;
+                $ff->floor_id=$floor->floor_id;
                 $ff->flat_id=$flat_id;
                 $ff->save();
             }
